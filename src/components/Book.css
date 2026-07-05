@@ -1,0 +1,38 @@
+.book {
+  background: var(--off-white);
+  padding: 72px 0;
+  color: var(--black);
+}
+
+.book .section-label {
+  color: var(--gold);
+}
+
+.book__text {
+  margin-top: 16px;
+  color: #333;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.book__contact-line {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.book__contact-line a {
+  color: var(--black);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.book__contact-line a:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+@media (max-width: 600px) {
+  .book { padding: 56px 0; }
+}

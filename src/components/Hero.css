@@ -1,0 +1,26 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Gradient starts very low — only bottom 20% fades to black */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 72%,
+    rgba(13, 13, 13, 0.55) 88%,
+    rgba(13, 13, 13, 1) 100%
+  );
+}

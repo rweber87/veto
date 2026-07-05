@@ -1,0 +1,11 @@
+.stage-photo {
+  width: 100%;
+  line-height: 0; /* remove gap under image */
+}
+
+.stage-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

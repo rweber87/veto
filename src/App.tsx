@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { de, en, Lang } from './i18n';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Kostprobe from './components/Kostprobe';
+import Book from './components/Book';
+import StagePhoto from './components/StagePhoto';
+import Barbershop from './components/Barbershop';
+import Footer from './components/Footer';
 
-function App() {
+const App: React.FC = () => {
+  const [lang, setLang] = useState<Lang>('de');
+  const t = lang === 'de' ? de : en;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar t={t} lang={lang} setLang={setLang} />
+      <main>
+        <Hero />
+        <About t={t} />
+        <Kostprobe t={t} />
+        <Book t={t} />
+        <StagePhoto />
+        <Barbershop t={t} />
+      </main>
+      <Footer t={t} />
+    </>
   );
-}
+};
 
 export default App;
