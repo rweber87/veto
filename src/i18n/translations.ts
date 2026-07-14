@@ -19,8 +19,9 @@ export const de: Translations = {
   },
   kostprobe: {
     label: 'Kostprobe',
-    caption1: 'Quartett Finale BinG! Barbershop Musikfestival 2026',
-    caption2: 'Gastauftritt bei »Wir in Bayern« im BR',
+    caption1: '»Musik in den Bergen« im BR',
+    caption2: 'Quartett Finale Europäische Barbershop Convention 2025',
+    caption3: 'Gastauftritt bei »Wir in Bayern« im BR',
   },
   barbershop: {
     label: 'Barbershop?',
@@ -62,8 +63,9 @@ export const en: Translations = {
   },
   kostprobe: {
     label: 'Preview',
-    caption1: 'Quartet Final BinG! Barbershop Music Festival 2026',
-    caption2: 'Guest appearance on »Wir in Bayern« (BR)',
+    caption1: 'Guest appearance on »Musik in den Bergen (BR)',
+    caption2: 'Quartet Final BinG! Barbershop Music Festival 2026',
+    caption3: 'Guest appearance on »Wir in Bayern« (BR)',
   },
   barbershop: {
     label: 'Barbershop?',

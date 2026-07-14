@@ -1,18 +1,23 @@
 .navbar {
+  height: var(--nav-height);
+  overflow: visible;
+  z-index: 100;
+}
+
+/* Sits over the hero image, scrolls with the page */
+.navbar--hero {
+  position: relative;
+  background: transparent;
+  margin-bottom: calc(-1 * var(--nav-height));
+}
+
+/* Fixed at top once über uns section is reached */
+.navbar--sticky {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  height: var(--nav-height);
-  transition: background 0.35s ease, box-shadow 0.35s ease;
-  /* overflow visible so logo can bleed outside */
-  overflow: visible;
-}
-
-.navbar--scrolled {
   background: rgba(13, 13, 13, 0.96);
-  box-shadow: 0 1px 0 rgba(211, 130, 41, 0.15);
   backdrop-filter: blur(10px);
 }
 
@@ -24,22 +29,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* overflow visible so logo overflows the bar */
   overflow: visible;
 }
 
-/* Logo — very large, overflows navbar height */
 .navbar__logo-btn {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  /* Logo is 10× nav height conceptually — render at 180px tall */
   height: 180px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  /* Overflow upward and downward from nav center */
   position: relative;
   z-index: 101;
 }
@@ -49,7 +50,6 @@
   width: auto;
 }
 
-/* Nav links — right side */
 .navbar__links {
   display: flex;
   align-items: center;
@@ -60,9 +60,9 @@
   background: none;
   border: none;
   color: var(--white);
-  font-family: var(--font-display);
+  font-family: var(--font-condensed);
+  font-weight: 400;
   font-size: 0.72rem;
-  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 8px 16px;
@@ -72,11 +72,15 @@
 }
 
 .navbar__links > button:hover {
-  opacity: 1;
   color: var(--gold);
+  opacity: 1;
 }
 
-/* Language switcher */
+.navbar__nav-btn--active {
+  color: var(--gold) !important;
+  opacity: 1 !important;
+}
+
 .navbar__lang {
   display: flex;
   align-items: center;
@@ -108,7 +112,6 @@
 .navbar__lang-btn:hover { color: var(--white); }
 .navbar__lang-btn--active { color: var(--gold) !important; }
 
-/* Hamburger */
 .navbar__hamburger {
   display: none;
   flex-direction: column;
@@ -135,13 +138,8 @@
 .navbar__hamburger span.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 768px) {
-  .navbar__logo-btn {
-    height: 120px;
-  }
-  .navbar__logo-btn img {
-    height: 120px;
-  }
-
+  .navbar__logo-btn { height: 120px; }
+  .navbar__logo-btn img { height: 120px; }
   .navbar__hamburger { display: flex; }
 
   .navbar__links {

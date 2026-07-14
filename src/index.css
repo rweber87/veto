@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,16 +9,17 @@
 :root {
   --black: #0d0d0d;
   --dark: #1a1a1a;
-  --purple-deep: #2d1a4a;
-  --purple-mid: #3d2060;
+  --purple-deep: #4c0d4d;
+  --purple-mid: #812a86;
   --purple-light: #7a4fa0;
-  --gold: #d38229;
-  --gold-light: #e8a040;
+  --gold: #ee7501;
+  --gold-light: #ff8f20;
   --white: #ffffff;
   --off-white: #f5f5f0;
   --font-display: 'Montserrat', sans-serif;
+  --font-condensed: 'Roboto Condensed', sans-serif;
   --font-body: 'Open Sans', sans-serif;
-  --nav-height: 160px;
+  --nav-height: 200px;
 
   --page-padding: 48px;
   --page-max: 1200px;
@@ -52,9 +53,9 @@ button { cursor: pointer; font-family: var(--font-body); border: none; backgroun
 }
 
 .section-label {
-  font-family: var(--font-display);
+  font-family: var(--font-condensed);
+  font-weight: 400;
   font-size: 1.5rem;
-  font-weight: 700;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 16px;
@@ -62,9 +63,10 @@ button { cursor: pointer; font-family: var(--font-body); border: none; backgroun
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-condensed);
+  font-weight: 400;
+  color: var(--gold);
   font-size: clamp(2.4rem, 5vw, 3.8rem);
-  font-weight: 900;
   line-height: 1.1;
 }
 
