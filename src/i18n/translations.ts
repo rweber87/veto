@@ -9,7 +9,7 @@ export const de: Translations = {
   },
   about: {
     label: 'Über Uns',
-    text: 'Vereint durch die Liebe zur Barbershop-Musik gründeten wir in 2023 unser Vocal Ensemble »Veto«. Als deutsch-amerikanisches Vierergespann bringen wir Popsongs aus verschiedenen Jahrzehnten auf die Bühne – vierstimmig und natürlich a cappella. Und das mit Erfolg: Seit 2025 sind wir amtierende Europameister im gemischten Barbershop-Gesang. Von Herzschmerz-Ballade über Swing- und Jazz-Standards bis zu Christmas Carols – wir bringen Leben in die Bude und Gefühle ins Herz.',
+    text: 'Vereint durch die Liebe zur Barbershop-Musik gründeten wir in 2023 unser Vocal-Ensemble »Veto«. Als deutsch-amerikanisches Vierergespann bringen wir Popsongs aus verschiedenen Jahrzehnten auf die Bühne – vierstimmig und natürlich a cappella. Und das mit Erfolg: Seit 2025 sind wir amtierende Europameister im gemischten Barbershop-Gesang. Von Herzschmerz-Ballade über Swing- und Jazz-Standards bis zu Christmas Carols – wir bringen Leben in die Bude und Gefühle ins Herz.',
     members: [
       { name: 'Sandra Rembecki', role: 'Tenor' },
       { name: 'Robbie Weber', role: 'Lead' },
@@ -26,10 +26,9 @@ export const de: Translations = {
   barbershop: {
     label: 'Barbershop?',
     title: 'Was ist Barbershop?',
-    p1: 'Barbershop-Musik klingt vielleicht ein bisschen so, als wenn vier Herren mit geschniegelten Schnurrbärten in Friseursalons stehen und über Rasiercrème singen – und ganz falsch ist das nicht. Früher trafen sich Männer tatsächlich oft in Barbershops, also Friseursalons, und sangen dort gemeinsam.',
-    p2: 'Heute ist Barbershop eine moderne, lebendige A-cappella-Musikrichtung, die Menschen aller Altersgruppen begeistert – oft gemischt, kreativ und mit ordentlich Bühnenenergie. Vierstimmiger Gesang steht zwar im Mittelpunkt, aber die Stärke liegt vor allem von Spaß, Ausdruck und diesen Gänsehaut-Harmonien, bei denen plötzlich alles perfekt zusammenklingt.',
-    p3: 'Gesungen wird dabei nicht nur klassisch oder nostalgisch: Viele Gruppen bringen Pop, Musical oder moderne Arrangements auf die Bühne – mal emotional, mal urkomisch und oft beides gleichzeitig. Wer einmal ein gutes Barbershop-Quartett live gehört hat, weiß es: Da braucht es keine Instrumente mehr, wenn die Stimmen anfangen zu „ringen".',
-    p4: 'Im deutschsprachigen Raum verbindet der Verband BinG! Sängerinnen und Sänger aus Deutschland und darüber hinaus. Der Verein organisiert Festivals, Wettbewerbe und Workshops und zeigt, wie modern und vielseitig Barbershop heute ist.',
+    p1: 'Barbershop-Musik klingt ein bisschen so, als würden vier Herren mit geschniegeltem Schnurrbart im Friseursalon stehen und über Rasiercreme singen – und ganz falsch ist das nicht. Früher trafen sich Männer tatsächlich oft in Barbershops, also Friseurläden, und sangen dort gemeinsam.',
+    p2: 'Heute ist Barbershop eine moderne, lebendige A-cappella-Musikrichtung, die Menschen aller Altersgruppen begeistert – oft gemischt, kreativ und mit ordentlich Bühnenenergie. Vierstimmiger Gesang steht zwar im Mittelpunkt, aber der Stil lebt vor allem von Spaß, Ausdruck und diesen Gänsehaut-Harmonien, bei denen plötzlich alles perfekt zusammenklingt. Gesungen wird dabei nicht nur klassisch oder nostalgisch: Viele Gruppen bringen Pop, Musical oder moderne Arrangements auf die Bühne – mal emotional, mal urkomisch und oft beides gleichzeitig. Wer einmal ein gutes Barbershop-Quartett live gehört hat, weiß: Da braucht es keine Instrumente mehr, wenn die Stimmen anfangen zu „ringen".',
+    p3: 'Im deutschsprachigen Raum verbindet der Verband BinG! Sängerinnen und Sänger aus Deutschland und darüber hinaus. Der Verein organisiert Festivals, Wettbewerbe und Workshops und zeigt, wie modern und vielseitig Barbershop heute ist.',
   },
   book: {
     label: 'Buche Uns!',
@@ -53,7 +52,7 @@ export const en: Translations = {
   },
   about: {
     label: 'About Us',
-    text: 'United by a love of barbershop music, we founded our vocal ensemble »Veto« in 2023. As a German-American quartet, we bring pop songs from multiple decades to the stage – four-part harmony, all a cappella. And with success: since 2025 we have been reigning European Champions in mixed barbershop singing. From heartbreak ballads to swing and jazz standards, all the way to Christmas carols – we bring the house down and touch the heart.',
+    text: 'United by a love of barbershop music, we founded our vocal ensemble »Veto« in 2023. As a German-American quartet, we bring pop songs from across the decades to the stage — four-part harmony, always a cappella. And with real success: since 2025 we have been reigning European Champions in mixed barbershop singing. From heartbreak ballads to swing and jazz standards all the way to Christmas carols — we bring the house down and touch the heart.',
     members: [
       { name: 'Sandra Rembecki', role: 'Tenor' },
       { name: 'Robbie Weber', role: 'Lead' },
@@ -70,10 +69,9 @@ export const en: Translations = {
   barbershop: {
     label: 'Barbershop?',
     title: 'What is Barbershop?',
-    p1: "Barbershop music might sound like four mustachioed gentlemen standing in hair salons singing about shaving cream – and that's not entirely wrong. Men used to gather in barbershops and sing together regularly.",
-    p2: "Today barbershop is a modern, vibrant a cappella genre that captivates people of all ages – often mixed, creative and packed with stage energy. Four-part harmony is at its core, but the real magic lies in the fun, expression, and those spine-tingling moments when everything clicks into perfect resonance.",
-    p3: "The repertoire is not just classical or nostalgic: many groups bring pop, musical theatre or modern arrangements to the stage – sometimes emotional, sometimes hilarious, often both at once. Once you've heard a great barbershop quartet live, you'll know: no instruments needed when the voices start to \"ring\".",
-    p4: 'In the German-speaking world, the BinG! association connects singers from Germany and beyond, organising festivals, competitions and workshops – showing just how modern and versatile barbershop is today.',
+    p1: "Barbershop music might sound like four mustachioed gentlemen standing in a hair salon singing about shaving cream — and that's not entirely wrong. Men really did used to gather in barbershops and sing together regularly.",
+    p2: "Today barbershop is a modern, vibrant a cappella genre that excites people of all ages — often mixed, creative, and full of stage energy. Four-part harmony is at its core, but the style lives above all through fun, expression, and those spine-tingling moments when everything suddenly clicks into perfect resonance. The repertoire isn't just classical or nostalgic either: many groups bring pop, musical theatre or modern arrangements to the stage — sometimes emotional, sometimes hilarious, often both at once. Once you've heard a great barbershop quartet live, you'll know: no instruments needed when the voices start to ring.",
+    p3: "In the German-speaking world, the BinG! association brings together singers from Germany and beyond. The organisation runs festivals, competitions and workshops, showing just how modern and versatile barbershop is today.",
   },
   book: {
     label: 'Book Us!',

@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
     setMenuOpen(false);
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 110;
+    const top = el.getBoundingClientRect().top + window.scrollY - 200;
     window.scrollTo({ top, behavior: 'smooth' });
   };
 
