@@ -17,43 +17,87 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
   const [sticky, setSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const isScrollingProgrammatically = React.useRef(false);
+  const programmaticScrollTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '-180px 0px -40% 0px',
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (isScrollingProgrammatically.current) return;
+
+      const scrollingDown = window.scrollY >= lastScrollY;
+
+      entries.forEach((entry) => {
+        if (scrollingDown && entry.isIntersecting) {
+          setActiveSection(entry.target.id as SectionId);
+        } else if (!scrollingDown && !entry.isIntersecting) {
+          const index = SECTIONS.indexOf(entry.target.id as SectionId);
+          if (index > 0) {
+            setActiveSection(SECTIONS[index - 1]);
+          } else {
+            setActiveSection(null);
+          }
+        }
+      });
+
+      lastScrollY = window.scrollY;
+    }, observerOptions);
+
+    SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
     const handleScroll = () => {
       const aboutEl = document.getElementById('about');
       if (aboutEl) {
         setSticky(window.scrollY >= aboutEl.offsetTop - 150);
       }
-
-      const scrollMid = window.scrollY + window.innerHeight / 3;
-      let current: SectionId | null = null;
-      for (const id of SECTIONS) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        if (el.offsetTop <= scrollMid) {
-          current = id;
-        }
-      }
-      setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      if (programmaticScrollTimer.current) {
+        clearTimeout(programmaticScrollTimer.current);
+      }
+    };
   }, []);
+
+  const scrollTo = (id: string) => {
+    setMenuOpen(false);
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    setActiveSection(id as SectionId);
+    isScrollingProgrammatically.current = true;
+
+    if (programmaticScrollTimer.current) {
+      clearTimeout(programmaticScrollTimer.current);
+    }
+    programmaticScrollTimer.current = setTimeout(() => {
+      isScrollingProgrammatically.current = false;
+    }, 1000);
+
+    const top = el.getBoundingClientRect().top + window.scrollY - 200;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
 
   const navBtnClass = (id: SectionId) => {
     const isActive = activeSection === id;
     const activeClass = isActive ? ' navbar__nav-btn--active' : '';
     const ctaClass = id === 'book' ? ' navbar__cta-btn' : '';
     return `navbar__nav-btn${activeClass}${ctaClass}`;
-  };
-
-  const scrollTo = (id: string) => {
-    setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 200;
-    window.scrollTo({ top, behavior: 'smooth' });
   };
 
   const navContent = (
