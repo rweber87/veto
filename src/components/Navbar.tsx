@@ -20,6 +20,18 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
   const isScrollingProgrammatically = React.useRef(false);
   const programmaticScrollTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
@@ -113,10 +125,10 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
       <div className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>
         <button className={navBtnClass('about')} onClick={() => scrollTo('about')}>{t.nav.about}</button>
         <button className={navBtnClass('kostprobe')} onClick={() => scrollTo('kostprobe')}>{t.nav.kostprobe}</button>
-        <button className={navBtnClass('barbershop')} onClick={() => scrollTo('barbershop')}>{t.nav.barbershop}</button>
         <button className={navBtnClass('book')} onClick={() => scrollTo('book')}>
           {t.nav.book}
         </button>
+        <button className={navBtnClass('barbershop')} onClick={() => scrollTo('barbershop')}>{t.nav.barbershop}</button>
 
         <div className="navbar__lang">
           <button
@@ -150,14 +162,11 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
 
   return (
     <>
-      {/* Hero navbar — in-flow, sits over hero image, scrolls away */}
       {!sticky && (
         <nav className="navbar navbar--hero">
           {navContent}
         </nav>
       )}
-
-      {/* Sticky navbar — fixed at top, only rendered once past the hero */}
       {sticky && (
         <nav className="navbar navbar--sticky">
           {navContent}

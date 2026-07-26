@@ -11,14 +11,27 @@
   margin-bottom: calc(-1 * var(--nav-height));
 }
 
-/* Fixed at top once über uns section is reached */
+/* Fixed at top once über uns section is reached — fades in gradually */
 .navbar--sticky {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background: rgba(13, 13, 13, 0.96);
+  box-shadow: 0 1px 0 rgba(238, 117, 1, 0.15);
   backdrop-filter: blur(10px);
+  animation: navFadeIn 0.5s ease forwards;
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .navbar__inner {
@@ -62,7 +75,7 @@
   color: var(--white);
   font-family: var(--font-condensed);
   font-weight: 400;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 8px 16px;
@@ -137,7 +150,8 @@
 .navbar__hamburger span.open:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .navbar__hamburger span.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 768px) {
+/* Switch to hamburger at 840px */
+@media (max-width: 840px) {
   .navbar__logo-btn { height: 120px; }
   .navbar__logo-btn img { height: 120px; }
   .navbar__hamburger { display: flex; }
@@ -145,14 +159,21 @@
   .navbar__links {
     display: none;
     position: fixed;
-    top: var(--nav-height);
-    left: 0; right: 0; bottom: 0;
-    background: rgba(13, 13, 13, 0.98);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 13, 13, 0.99);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
     padding: 40px 24px;
+    z-index: 99;
+    /* Prevent any scrolling inside the menu */
+    overflow: hidden;
   }
 
   .navbar__links--open { display: flex; }

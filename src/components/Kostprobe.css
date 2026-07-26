@@ -1,8 +1,11 @@
 .kostprobe {
   background: linear-gradient(
     to bottom,
-    var(--purple-mid) 0%,
-    var(--purple-light) 100%
+    #3d1840 0%,
+    #4c0d4d 15%,
+    #4c0d4d 50%,
+    #2d1230 75%,
+    #0d0d0d 100%
   );
   padding: 72px 0 80px;
 }

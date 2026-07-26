@@ -2,9 +2,9 @@
   background: linear-gradient(
     to bottom,
     #0d0d0d 0%,
-    #0d0d0d 30%,
-    var(--purple-deep) 70%,
-    var(--purple-mid) 100%
+    #1a0a1a 40%,
+    #2d1230 70%,
+    #3d1840 100%
   );
   padding: 72px 0 80px;
 }
