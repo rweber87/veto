@@ -70,12 +70,21 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
     const handleScroll = () => {
       const aboutEl = document.getElementById('about');
       if (aboutEl) {
-        setSticky(window.scrollY >= aboutEl.offsetTop - 150);
+        setSticky(window.scrollY > 0 && window.scrollY >= aboutEl.offsetTop - 150);
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+
+    // Wait for hero image to load before checking offsetTop
+    const heroImg = document.querySelector('.hero__bg-img') as HTMLImageElement | null;
+    if (heroImg && heroImg.complete) {
+      // Image already cached — check immediately
+      handleScroll();
+    } else if (heroImg) {
+      // Wait for image to finish loading so offsetTop is accurate
+      heroImg.addEventListener('load', handleScroll, { once: true });
+    }
 
     return () => {
       observer.disconnect();

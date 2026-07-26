@@ -6,7 +6,7 @@ import './Hero.css';
 const Hero: React.FC = () => {
   return (
     <section className="hero" id="hero">
-      <picture className="hero__picture" aria-hidden="true">
+      <picture className="hero__picture">
         <source media="(max-width: 900px)" srcSet={headerMobileImg} />
         <img src={headerImg} alt="" className="hero__bg-img" />
       </picture>
