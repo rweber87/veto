@@ -8,10 +8,17 @@ import Book from './components/Book';
 import StagePhoto from './components/StagePhoto';
 import Barbershop from './components/Barbershop';
 import Footer from './components/Footer';
+import ComingSoon from './components/ComingSoon';
+
+const isComingSoon = window.location.hostname === 'vetoquartet.com';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Lang>('de');
   const t = lang === 'de' ? de : en;
+
+  if (isComingSoon) {
+    return <ComingSoon />;
+  }
 
   return (
     <>
