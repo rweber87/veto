@@ -17,7 +17,7 @@ const Book: React.FC<BookProps> = ({ t }) => {
         <p className="book__contact-line">
           {t.book.contact}:{' '}
           <a href={emailHref}>{t.footer.email}</a>
-          {'  |  '}
+          <br />
           {t.book.contactSuffix}: {t.book.contactName}
         </p>
       </div>

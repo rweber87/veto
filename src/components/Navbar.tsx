@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Translations, Lang } from '../i18n';
 import vetoLogo from '../assets/Veto.svg';
+import vetoPlay1 from '../assets/Veto_play 1.svg';
+import vetoPlay2 from '../assets/Veto_play 2.svg';
+import vetoPlay3 from '../assets/Veto_play 3.svg';
 import './Navbar.css';
 
 interface NavbarProps {
@@ -8,6 +11,10 @@ interface NavbarProps {
   lang: Lang;
   setLang: (lang: Lang) => void;
 }
+
+const LOGOS = [vetoLogo, vetoPlay1, vetoPlay2, vetoPlay3];
+
+const sessionLogo = LOGOS[Math.floor(Math.random() * LOGOS.length)];
 
 const SECTIONS = ['about', 'kostprobe', 'barbershop', 'book'] as const;
 type SectionId = typeof SECTIONS[number];
@@ -20,7 +27,6 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
   const isScrollingProgrammatically = React.useRef(false);
   const programmaticScrollTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
@@ -76,13 +82,10 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Wait for hero image to load before checking offsetTop
     const heroImg = document.querySelector('.hero__bg-img') as HTMLImageElement | null;
     if (heroImg && heroImg.complete) {
-      // Image already cached — check immediately
       handleScroll();
     } else if (heroImg) {
-      // Wait for image to finish loading so offsetTop is accurate
       heroImg.addEventListener('load', handleScroll, { once: true });
     }
 
@@ -128,7 +131,7 @@ const Navbar: React.FC<NavbarProps> = ({ t, lang, setLang }) => {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Veto Quartet – back to top"
       >
-        <img src={vetoLogo} alt="Veto Quartet" />
+        <img src={sessionLogo} alt="Veto Quartet" />
       </button>
 
       <div className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>

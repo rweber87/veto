@@ -12,6 +12,7 @@
 /* Intro text — same width as the member grid */
 .about__intro {
   margin-bottom: 60px;
+  padding-top: 40px;
 }
 
 .about__text {
@@ -77,6 +78,10 @@
   .about__members {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  .about__intro {
+    padding-top: 150px;
   }
 }
 

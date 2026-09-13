@@ -15,6 +15,7 @@ const Barbershop: React.FC<BarbershopProps> = ({ t }) => {
           <p>{t.barbershop.p1}</p>
           <p>{t.barbershop.p2}</p>
           <p>{t.barbershop.p3}</p>
+          {t.barbershop.p4 ? <p>{t.barbershop.p4}</p> : null}
         </div>
       </div>
     </section>
