@@ -21,6 +21,7 @@ export interface Translations {
     caption2: string;
     caption3: string;
     caption4: string;
+    caption5: string;
   };
   barbershop: {
     label: string;

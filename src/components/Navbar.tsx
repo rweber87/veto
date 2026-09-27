@@ -12,7 +12,8 @@ interface NavbarProps {
   setLang: (lang: Lang) => void;
 }
 
-const LOGOS = [vetoLogo, vetoPlay1, vetoPlay2, vetoPlay3];
+// const LOGOS = [vetoLogo, vetoPlay1, vetoPlay2, vetoPlay3];
+const LOGOS = [vetoLogo];
 
 const sessionLogo = LOGOS[Math.floor(Math.random() * LOGOS.length)];
 

@@ -23,6 +23,7 @@ export const de: Translations = {
     caption2: 'Musik in den Bergen im BR',
     caption3: 'Quartett Finale Europäische Barbershop Convention 2025',
     caption4: 'Gastauftritt bei Wir in Bayern im BR',
+    caption5: 'Quartett Halbfinale BinG! Barbershop Musikfestival 2026',
   },
   barbershop: {
     label: 'Barbershop?',
@@ -67,6 +68,7 @@ export const en: Translations = {
     caption2: 'Musik in den Bergen on BR (Bavarian Public Broadcaster)',
     caption3: 'Quartet Final European Barbershop Convention 2025',
     caption4: 'Featured on Wir in Bayern on BR (Bavarian Public Broadcaster)',
+    caption5: 'Quartet Semi-final BinG! Barbershop Music Festival 2026',
   },
   barbershop: {
     label: 'Barbershop?',
