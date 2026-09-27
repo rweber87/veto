@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Translations, Lang } from '../i18n';
 import vetoLogo from '../assets/Veto.svg';
-import vetoPlay1 from '../assets/Veto_play 1.svg';
-import vetoPlay2 from '../assets/Veto_play 2.svg';
-import vetoPlay3 from '../assets/Veto_play 3.svg';
+import _vetoPlay1 from '../assets/Veto_play 1.svg';
+import _vetoPlay2 from '../assets/Veto_play 2.svg';
+import _vetoPlay3 from '../assets/Veto_play 3.svg';
 import './Navbar.css';
 
 interface NavbarProps {
